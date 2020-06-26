@@ -568,7 +568,7 @@ sub n16_parts {
 	( $_[0]->nxx_parts('nnnnnnnn') )
 }
 
-=item C<n16_parts>
+=item C<n32_parts>
 
 Splits the address into an 4-item array of unsigned long integers. Network byte
 order is implied, a long integer is 32-bits long.
