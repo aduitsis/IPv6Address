@@ -333,11 +333,12 @@ sub to_string {
 	return $_[0]->string();
 }
 
-=item C<split( exponent , target_length )>
+=item C<split( exponent )>
 
-Splits the address to the order of two of the number given as first argument.
-Example: if argument is 3, 2^3=8, address is split into 8 parts. The final parts
-have prefix length equal to the target_length specified in the second argument.
+Splits the address into subnets of the size (2^exponent) specified by the first argument.
+Example: if argument is 3, 2^3=8, the address to be splitted into 8 subnets. The final parts
+have prefix length equal to the address prefix length + exponent. An exponent should not exceed 128 together with the sum of an original prefix length.
+For example if a prefix len of address is 125 then an exponent can be up to 3.
 
 =cut
 sub split {
